@@ -44,7 +44,7 @@ addSelectorHere {
 	border-radius: 1em;
 	padding: 8px;
 	width: 80%;
-	margin: 12px auto;
+	margin-bottom: 1em;
 }
 
 #registerForm {
