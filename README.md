@@ -1,4 +1,4 @@
-#js-bootcamp-foodplate-jqm
+#css-bootcamp-foodplate-jqm
 
 ## After cloning the foodplate project
 1. `npm install `
