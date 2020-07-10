@@ -5,6 +5,7 @@ body {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+	overflow: hidden;
 }
 
 section[data-role='page'] {
@@ -32,7 +33,6 @@ section[data-role='page'] {
 	text-align:center;
 	border: 2px solid #000;
 	border-radius: 1em;
-	margin-bottom: 1em;
 }
 
 .confirmMessage {
@@ -81,17 +81,15 @@ form ul {
     color:#333;
     font-size: 16px;
     font-weight: bold;
-    padding: 10px;
     height: 45px;
     width: 150px;
-    text-decoration: none;
     border-radius: 10px;
     box-shadow:rgba(0,0,0,0.5) 4px 4px 24px;
     text-shadow: -1px -1px 1px #ccc;
     border: solid #b8b8b8 2px;
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff7fb), to(#d1cdcf));
-    background: -moz-linear-gradient(top, #fff7fb, #d1cdcf);
 }
+
 .fpButton:active {
     background-color: #fff;
     box-shadow: 0 0 20px rgba(255,255,255,0.85);
