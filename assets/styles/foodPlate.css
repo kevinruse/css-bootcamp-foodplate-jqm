@@ -235,6 +235,8 @@ form ul {
     font-weight: bold;
 }
 
+/* add css conditional and background with conical gradient here */
+
  .ui-controlgroup-label, label.ui-input-text {
     font-size: 18px;
     text-shadow: none;
