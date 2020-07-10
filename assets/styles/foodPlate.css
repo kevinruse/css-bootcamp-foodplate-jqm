@@ -10,9 +10,9 @@ body {
 
 section[data-role='page'] {
   	height: 100%;
-    background:url(../images/bgImages/circle1.png) -108px -108px repeat, url(../images/bgImages/circle2.png) -24px -24px repeat #00b6f1;
+    background: url(../images/bgImages/circle1.png) -108px -108px repeat, url(../images/bgImages/circle2.png) -24px -24px repeat #00b6f1;
 	text-align: center;
-	box-shadow:inset 0 0 95px rgba(0,0,0,.70);
+	box-shadow: inset 0 0 95px rgba(0,0,0,.70);
 }
 
 #adultAge, #childAge {
@@ -34,9 +34,6 @@ section[data-role='page'] {
 	border: 1px solid #000;
 	background-color: #fff;
 	border-radius: 1em;
-	padding: 8px;
-	width: 80%;
-	margin: 12px auto;
 }
 
 #registerForm {
