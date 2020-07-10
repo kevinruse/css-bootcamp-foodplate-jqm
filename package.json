@@ -1,0 +1,20 @@
+{
+  "name": "foodPlate",
+  "version": "1.0.0",
+  "description": "A web application that tracks daily nutritional consumption relative to the USDA Food Plate guidelines.",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "foodplate",
+    "nutrition",
+    "usda",
+    "guidelines"
+  ],
+  "author": "Kevin Ruse",
+  "license": "ISC",
+  "devDependencies" : {
+    "jquery" : "^2.1.4"
+  }
+}

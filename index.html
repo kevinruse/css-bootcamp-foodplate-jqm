@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title>My Daily Food Plate</title>
+    <!-- description of the website - used on search results pages -->
+    <meta name="description" content="Welcome to the Food Plate Web Application for tracking nutrition consumption relative to the USDA Food Plate guidelines. Get healthy with the easy-to-use FoodPlate app!">
+    <!-- author of the webpage -->
+    <meta name="author" content="Kevin Ruse">
+    <!-- keywords - not used in SEO -->
+    <meta name="keywords" content="Food, Plate, Food Plate, nutrition, Daily FoodPlate, USDA,  Guidelines">
+    <!-- iOS specific meta element to use fullscreen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--android specific meta element to use fullscreen-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- iOS specific meta element to recognize telephone numbers -->
+    <meta name="format-detection" content="telephone=no">
+    <!-- iOS specific meta element to indicate how to display the status bar -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- fullscreen view for Palm Phone -->
+    <meta name="HandheldFriendly" content="True">
+    <!-- fullscreen view for Windows Phone -->
+    <meta name="MobileOptimized" content="320">
+    <meta name="version" content="0.1">
+    <!-- apple touch icons -->
+    <link rel="apple-touch-icon" sizes="29x29" href="assets/images/icons/icons-29.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/icons/icons-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/icons/icons-114.png">
+    <!-- link to fav icon: all browsers, except IE -->
+    <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
+    <!-- link to fav icon: IE -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+    <!-- viewport element -->
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+    <!-- jquery UI styles -->
+    <link rel="stylesheet" href="assets/styles/jquery-ui.min.css" >
+    <link rel="stylesheet" href="assets/styles/jquery-ui-1.11.1-themes.css">
+
+    <!-- jquery MOBILE styles -->
+    <link rel="stylesheet" href="assets/styles/jquery.mobile-1.4.3.css" />
+
+    <!-- css reset -->
+    <link rel="stylesheet" href="assets/styles/normalize.css">
+
+    <!-- FOODPLATE styles -->
+    <link rel="stylesheet" href="assets/styles/foodPlate.css">
+
+</head>
+<body>
+<!--Splash Page-->
+<section data-role="page" id="splashPage">
+    <header data-role="header" id="staticHeader">
+        <img src="assets/images/icons/icons-57.png" class="ui-btn-left" alt="Food Plate logo">
+        <h1>Daily Food Plate</h1>
+    </header>
+    <main id="splashContent" data-role="content">
+        <div id="initScreen">
+            <img src="assets/images/plateImages/myplate_magenta.gif" alt="Food Plate">
+            <form id="initRegisterForm">
+                <input type="submit" id="initRegister_btn" value="Register" class="fpButton" role="button">
+            </form>
+        </div>
+    </main>
+    <div data-role="footer" id="splashFooter" data-theme="b" data-back-btn-text="">
+        <h4>Your Daily Food Plate</h4>
+    </div>
+</section>
+<!--Register Form Page-->
+<section data-role="page" id="registerFormPage">
+    <header data-role="header" data-add-back-btn="false" id="registerHeader">
+        <img src="assets/images/icons/icons-57.png" class="ui-btn-left" alt="Food Plate logo">
+        <h1>Daily Food Plate</h1>
+    </header>
+
+    <!--Register Confirmation Page-->
+    <main data-role="content">
+        <div id="registerConfirm"></div>
+        <div id="registerForm">
+            <form name="register_frm" id="register_frm">
+                <label for="firstName" class="firstNameLabel">First Name:</label>
+                <input type="text" name="FirstName" id="firstName" aria-required="true" required placeholder="Type your first name here." class="required">
+                <fieldset id="genderFieldSet" data-role="controlgroup" data-type="horizontal" aria-required="true">
+                    <input type="radio" name="gender" id="sexF" value="F">
+                    <label for="sexF">Female</label>
+                    <input type="radio" name="gender" id="sexM" value="M"/>
+                    <label for="sexM">Male</label>
+                </fieldset>
+
+                <fieldset id="ageSet" data-role="controlgroup" data-type="horizontal" aria-required="true">
+                    <input type="radio" id="ageGroupC" value="C" name="AgeGroup"/>
+                    <label for="ageGroupC">Child</label>
+                    <input type="radio" id="ageGroupA" value="A" name="AgeGroup"/>
+                    <label for="ageGroupA">Adult</label>
+                </fieldset>
+
+                <div id="adultAgeGroups" style="display:none;">
+                    <label class="visually-hidden" for="adultAge">Adult</label>
+                    <select name="Adult Age Group" id="adultAge" size="1">
+                        <option value="">Your age</option>
+                        <option value="19-30">19-30</option>
+                        <option value="31-50">31-50</option>
+                        <option value="51+">51+</option>
+                    </select>
+
+                </div>
+                <div id="childAgeGroups" style="display: none;">
+                    <label class="visually-hidden" for="childAge">Child</label>
+                    <select name="childAgeGroup" id="childAge" size="1">
+                        <option value="">Your age</option>
+                        <option value="2-30">2-3</option>
+                        <option value="4-8">4-8</option>
+                        <option value="9-13">9-13</option>
+                        <option value="14-18">14-18</option>
+                    </select>
+                    <div id="errMsgBox"></div>
+                </div>
+                <div>
+                    <input type="submit" name="register_user" id="register_user_btn" role="button" value="Register User" class="fpButton" >
+                </div>
+            </form>
+        </div>
+    </main>
+    <div data-role="footer" id="registerFooter" data-theme="b" data-add-back-btn="true">
+        <h4>Your Daily Food Plate</h4>
+    </div>
+</section>
+<!--Add Food Page-->
+<section data-role="page" id="addFoodPage">
+    <header data-role="header" data-theme="b" id="addFoodHeader">
+        <img src="assets/images/icons/icons-57.png" class="ui-btn-left" alt="Food Plate logo">
+        <h1 id="welcomeHeader">Daily Food Plate</h1>
+    </header>
+    <main data-role="content" id="addFoodContent">
+        <div id="foodPlateWrapper" class="plateWrapper">
+            <div id="colwrap1">
+                <img src="assets/images/plateImages/fruitempty.png" id="fruitempty" alt="" />
+                <img src="assets/images/plateImages/vegempty.png" id="vegempty" alt="" /> </div>
+            <div id="colwrap2">
+                <img src="assets/images/plateImages/graindairyempty.png" id="grainempty" alt="" />
+                <div id="logoContainer" class="clearFloat"></div>
+                <img src="assets/images/plateImages/proteinempty.png" id="proteinempty" alt="" />
+                <div class="clearFloat"></div>
+            </div>
+            <img src="assets/images/plateImages/text.png" id="text" alt="" />
+            <div class="foodIcons">
+                <img src="assets/images/foodImages/apple.png" alt="apple" id="fruitIcon">
+                <img src="assets/images/foodImages/onion.png" alt="veg" id="vegIcon">
+                <img src="assets/images/foodImages/chicken.png" alt="protein" id="proteinIcon">
+                <img src="assets/images/foodImages/bread.png" alt="grain" id="grainIcon">
+                <img src="assets/images/foodImages/dairy.png" alt="dairy" id="dairyIcon">
+                <div id="status" class="message visually-hidden"></div>
+            </div>
+        </div>
+    </main>
+    <div data-role="footer" id="addFoodFooter" data-theme="b" data-back-btn-text="">
+        <h4>Your Daily Food Plate</h4>
+    </div>
+</section>
+<!-- JavaScript Libraries -->
+<!-- jQuery JavaScript Library v2.1.4 LOCAL -->
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<!-- jQuery Mobile 1.4.3 LOCAL -->
+<script src="libs/jquery.mobile-1.4.3/jquery.mobile-1.4.3.js"></script>
+<!-- jQuery UI - v1.11.1 - 2014-08-13-->
+<script src="libs/jquery-ui/jquery-ui.min.js"></script>
+<!-- jQuery UI Touch Punch 0.2.3 -->
+<script src="libs/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+<script src="libs/jqueryValidate/jquery.validate.js"></script>
+<!-- FoodPlate FoodPlate  JS-->
+<script src="scripts/modules/main.js" type="module"></script>
+</body>
+</html>
