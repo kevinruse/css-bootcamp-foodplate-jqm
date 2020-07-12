@@ -67,10 +67,8 @@ form ul {
 	text-shadow: none;
 }
 
-
-
 .fpButton {
-    color:#333;
+    color:#0071BC;
     font-size: 16px;
     font-weight: bold;
     height: 45px;
@@ -78,9 +76,9 @@ form ul {
 	margin-top: 1em;
     text-decoration: none;
     border-radius: 10px;
-    box-shadow:rgba(0,0,0,0.5) 4px 4px 24px;
+    box-shadow:rgb(244,169,59) 2px 2px 8px 2px;
     text-shadow: -1px -1px 1px #ccc;
-    border: solid #b8b8b8 2px;
+    border: solid rgb(244,169,59) 2px;
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff7fb), to(#d1cdcf));
 }
 
